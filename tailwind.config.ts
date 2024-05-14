@@ -13,6 +13,11 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors: {
+        hp_navy_blue: "#022840",
+        hp_lime: "#84e524",
+        hp_light_purple: "#9980da",
+      },
     },
   },
   plugins: [],
