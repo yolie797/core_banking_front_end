@@ -3,6 +3,17 @@
 @tailwind utilities;
 
 :root {
+  --hp-dark-blue: rgba(2, 40, 64, 1);
+  --hp-dark-green: rgba(38, 59, 11, 1);
+  --text-white: #ffffff;
+  --off-white: #f4f4f4;
+  --light-purple: #9980da;
+  --pie-chart-color-1: #9980da;
+  --pie-chart-color-2: #00c25e;
+  --pie-chart-color-3: #005874;
+  --pie-chart-color-4: #ff4440;
+  --pie-chart-color-5: #007438;
+
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
