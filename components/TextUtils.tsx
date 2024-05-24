@@ -1,14 +1,16 @@
-// MyComponent.js
-import React from 'react';
-import { TextSize } from './Enums/TextSize';
-import { TextWeight } from './Enums/TextWeight';
+import { TextSize } from './Styles/TextSize';
+import { TextWeight } from './Styles/TextWeight';
 
-interface TextStyleOptions {
+interface TextStyleParams {
   fontSize: keyof typeof TextSize;
   color: string;
   fontWeight: keyof typeof TextWeight;
 }
 
-export const buildTextStyle = ({ fontSize, color, fontWeight }: TextStyleOptions): string => {
-  return `${TextSize[fontSize]} ${TextWeight[fontWeight]} ${color}`;
+export const buildTextStyle = ({ fontSize, color, fontWeight }: TextStyleParams) => {
+  return {
+    fontSize: TextSize[fontSize],
+    color: color,
+    fontWeight: TextWeight[fontWeight],
+  };
 };
