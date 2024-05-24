@@ -4,4 +4,5 @@ export const TextSize = {
     mdText: 'text-base',
     lgText: 'text-lg',
     xlText: 'text-xl',
+    xxlText: 'text-2xl',
   };

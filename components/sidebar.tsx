@@ -3,16 +3,17 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { Disclosure } from "@headlessui/react";
 import {
   MdOutlineSpaceDashboard,
-  MdOutlineMoreHoriz,
   MdOutlineSettings,
   MdOutlineLogout,
   MdManageAccounts,
-  MdOutlineManageHistory,
   MdAllInbox
 } from "react-icons/md";
-import { FaUser } from "react-icons/fa";
+import { FaUsers} from "react-icons/fa";
 import { AiOutlineAudit } from "react-icons/ai";
-import { lableTxt } from './label';
+import { RiUser3Fill } from "react-icons/ri";
+import { TextSize } from './Enums/TextSize';
+import { TextWeight } from './Enums/TextWeight';
+import { TextColor } from './Enums/TextColor';
 
 interface SidebarItemProps {
   icon: ReactNode;
@@ -28,44 +29,44 @@ const SidebarItem: React.FC<SidebarItemProps> = ({ icon, label }) => (
 );
 
 export default function Sidebar() {
-  // Menu items
+  // Menu items  
   const menuItems = [
-    { icon: <MdOutlineSpaceDashboard className="labelTxt"/>, label: "Dashboard" },
-    { icon: <FaUser className="text-2xl text-gray-600 group-hover:text-white" />, label: "Manage Users" },
-    { icon: <MdManageAccounts className="text-2xl text-gray-600 group-hover:text-white" />, label: "Manage Customers" },
-    { icon: <AiOutlineAudit className="text-2xl text-gray-600 group-hover:text-white" />, label: "Manage Audit" },
-    { icon: <MdOutlineManageHistory className="text-2xl text-gray-600 group-hover:text-white" />, label: "History" },
-    { icon: <MdAllInbox className="text-2xl text-gray-600 group-hover:text-white" />, label: "Inbox" },
-    { icon: <MdAllInbox className="text-2xl text-gray-600 group-hover:text-white" />, label: "Batch Jobs" },
+    { icon: <MdOutlineSpaceDashboard className={`${TextColor.defaultColor} ${TextSize.xxlText} ${TextColor.hoverTextColor}`} />, label: "Dashboard" },
+    { icon: <RiUser3Fill className={`${TextColor.defaultColor} ${TextSize.xxlText} ${TextColor.hoverTextColor}`} />, label: "Manage Users" },
+    { icon: <FaUsers className={`${TextColor.defaultColor} ${TextSize.xxlText} ${TextColor.hoverTextColor}`} />, label: "Manage Customers" },
+    { icon: <MdManageAccounts className={`${TextColor.defaultColor} ${TextSize.xxlText} ${TextColor.hoverTextColor}`} />, label: "Manage Account" },
+    { icon: <AiOutlineAudit className={`${TextColor.defaultColor} ${TextSize.xxlText} ${TextColor.hoverTextColor}`} />, label: "Manage Audit" },
+    { icon: <MdAllInbox className={`${TextColor.defaultColor} ${TextSize.xxlText} ${TextColor.hoverTextColor}`} />, label: "Batch Jobs" },
   ];
 
   // Settings items
   const settingsItems = [
-    { icon: <MdOutlineSettings className="text-2xl text-gray-600 group-hover:text-white" />, label: "Settings" },
-    { icon: <MdOutlineMoreHoriz className="text-2xl text-gray-600 group-hover:text-white" />, label: "More" },
+    { icon: <MdOutlineSettings className={`${TextColor.defaultColor} ${TextSize.xxlText} ${TextColor.hoverTextColor}`} />, label: "Settings" },
+
   ];
 
   return (
     <div className="bg-white">
-
       <Disclosure as="nav">
         <GiHamburgerMenu className="block md:hidden h-6 w-6" aria-hidden="true" />
-        <div className="p-6 w-1/2 h-screen bg-white z-10 fixed top-0 -left-96 lg:left-0 lg:w-60 peer-focus:left-0 peer:transition ease-out delay-150 duration-200">
+        <div className="p-6 w-1/2 h-screen bg-white  fixed top-0 -left-96 lg:left-0 lg:w-60 peer-focus:left-0 peer:transition ease-out delay-150 duration-200">
           <div className="flex flex-col justify-start">
             <img src="https://hassemprag.com/wp-content/uploads/2023/09/Group-57.svg" alt="Hassam" />
-            <div className="my-9 border-b border-gray-100">
+            <h2 className={`${TextColor.hpDarkGreen} ${TextSize.xlText} ${TextColor.hoverTextColor} ${TextWeight.boldText} my-10`}>General</h2>
+            <div className="my-1 border-b border-gray-100">
               {menuItems.map((item, index) => (
                 <SidebarItem key={index} icon={item.icon} label={item.label} />
               ))}
             </div>
-            <div className="border-b border-gray-100 pb-4">
+            <div className=" border-gray-100 ">
+            <h2 className={`${TextColor.hpDarkGreen} ${TextSize.xlText} ${TextColor.hoverTextColor} ${TextWeight.boldText} my-5`}>Other</h2>
               {settingsItems.map((item, index) => (
                 <SidebarItem key={index} icon={item.icon} label={item.label} />
               ))}
             </div>
-            <div className="my-11 mb-2">
+            <div className="absolute bottom-0 mt-20">
               <SidebarItem
-                icon={<MdOutlineLogout className="text-2xl text-gray-600 group-hover:text-white" />}
+                icon={<MdOutlineLogout className={`${TextColor.defaultColor} ${TextSize.xxlText} ${TextColor.hoverTextColor}`} />}
                 label="Logout"
               />
             </div>
