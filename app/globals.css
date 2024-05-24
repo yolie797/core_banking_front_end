@@ -15,7 +15,7 @@
   --pie-chart-color-5: #007438;
 
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
+  --background-start-rgb:  255, 255, 255;
   --background-end-rgb: 255, 255, 255;
 }
 
@@ -29,11 +29,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
+  background:
     rgb(var(--background-start-rgb));
 }
 
