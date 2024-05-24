@@ -1,5 +1,5 @@
 import React from 'react';
-import { PrimaryButton } from './buttonStyles';
+import { PrimaryButton } from './Styles/buttonStyles';
 import { buildTextStyle } from './TextUtils';
 
 interface SecondaryButtonProps {

@@ -1,9 +1,12 @@
 "use client";
 
 import React from 'react';
-import PropTypes from 'prop-types';
 
-const HpButton = ({ text }) => {
+interface HpButtonProps {
+  text: string;
+}
+
+const HpButton: React.FC<HpButtonProps> = ({ text }) => {
   return (
     <button
       type="submit"
@@ -12,10 +15,6 @@ const HpButton = ({ text }) => {
       {text}
     </button>
   );
-};
-
-HpButton.propTypes = {
-  text: PropTypes.string.isRequired,
 };
 
 export default HpButton;

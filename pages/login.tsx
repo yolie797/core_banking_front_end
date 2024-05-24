@@ -1,37 +1,36 @@
-// pages/login.js
-import React from 'react';
-import SignInButton from '../components/HpButton';
+import React, { FC } from 'react';
+import HpButton from '../components/HPButton';
 
-export default function Login() {
+const Login: FC = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-offWhite">
-      <div className="bg-white shadow-md rounded-lg p-8 max-w-md w-full">
-        <div className="flex justify-center mb-6">
-          <img
-            src="https://hassemprag.com/wp-content/uploads/2023/09/Group-57.svg"
-            alt="Hassam"
-            className="h-12"
-          />
-        </div>
-        <h2 className="text-center text-2xl font-semibold text-hp_navy_blue mb-6">
+    <div className="min-h-screen flex items-center justify-center bg-offWhite relative">
+      <div className="absolute top-4 left-4">
+        <img
+          src="https://hassemprag.com/wp-content/uploads/2023/09/Group-57.svg"
+          alt="Hassem"
+          className="h-6"
+        />
+      </div>
+      <div className="bg-white shadow-md rounded-lg p-8 max-w-md w-full border border-blue-200">
+        <h2 className="text-center text-2xl font-semibold text-hpDarkBlue mb-6">
           Login
         </h2>
         <form>
           <div className="mb-4">
-            <label className="block text-gray-700">Email</label>
+            <label className="block text-gray-700 mb-2">Email</label>
             <input
               type="email"
               placeholder="Email"
-              className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-hp_navy_blue"
+              className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
           <div className="mb-4">
-            <label className="block text-gray-700">Password</label>
+            <label className="block text-gray-700 mb-2">Password</label>
             <div className="relative">
               <input
                 type="password"
                 placeholder="New Password"
-                className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:border-hp_navy_blue"
+                className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
               <div className="absolute inset-y-0 right-0 flex items-center pr-3">
                 <svg
@@ -46,9 +45,11 @@ export default function Login() {
               </div>
             </div>
           </div>
-          <SignInButton text="Sign in" />
+          <HpButton text="Sign in" />
         </form>
       </div>
     </div>
   );
-}
+};
+
+export default Login;

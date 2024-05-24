@@ -1,5 +1,5 @@
 
-import Sidebar from "@/components/sidebar";
+import Sidebar from "@/components/Sidebar";
 import Login from "@/pages/login"
 
 export default function Home() {
