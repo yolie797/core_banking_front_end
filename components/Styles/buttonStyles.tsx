@@ -1,4 +1,5 @@
-import { Button, styled } from '@mui/material';
+import { Button } from '@mui/material';
+import { styled } from '@mui/system';
 
 export const PrimaryButton = styled(Button)({
   minHeight: '50px',
@@ -14,7 +15,7 @@ export const CategoryNotActiveButton = styled(Button)({
   minHeight: '38px',
   border: '1px solid #0D47A1',
   backgroundColor: '#0D47A1',
-  color: '#0D47A1',
+  color: '#FFFFFF', // Ensure the text is visible on the blue background
   borderRadius: '8px',
   '&:hover': {
     backgroundColor: '#0B3C91',
