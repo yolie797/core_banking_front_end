@@ -11,9 +11,9 @@ import {
 import { FaUsers} from "react-icons/fa";
 import { AiOutlineAudit } from "react-icons/ai";
 import { RiUser3Fill } from "react-icons/ri";
-import { TextSize } from './Enums/TextSize';
-import { TextWeight } from './Enums/TextWeight';
-import { TextColor } from './Enums/TextColor';
+import { TextSize } from './Styles/TextSize';
+import { TextWeight } from './Styles/TextWeight';
+import { TextColor } from './Styles/TextColor';
 
 interface SidebarItemProps {
   icon: ReactNode;
