@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
 import { FaEdit, FaTrash, FaAngleDown } from "react-icons/fa";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
+import HpButton from "../HPButton";
 
 interface Column {
   Header: string;
@@ -11,15 +12,16 @@ interface TableProps {
   columns: Column[];
   data: Record<string, any>[];
   title: string; 
+  text: string
 }
 
-const Table: React.FC<TableProps> = ({ columns, data, title }) => {
+const Table: React.FC<TableProps> = ({ columns, data, title, text }) => {
   const [sortConfig, setSortConfig] = useState<{
     key: string;
     direction: string;
   } | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 7;
+  const itemsPerPage = 5;
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const sortedData = useMemo(() => {
@@ -59,22 +61,25 @@ const Table: React.FC<TableProps> = ({ columns, data, title }) => {
   const totalPages = Math.ceil(data.length / itemsPerPage);
 
   return (
-    <div className=" shadow-md sm:rounded-lg">
+    <div className="overflow-x-auto">
       <div className="flex justify-between  items-center p-4">
-        <h2 className="text-lg font-semibold">{title}</h2>{" "}
+        <h2 className="text-lg font-semibold text-hpDarkBlue">{title}</h2>{" "}
         {}
-        <div className=" relative inline-block text-left">
+        <div className="p-4 relative inline-block text-left">
+          <div>
+             {/* Search bar button*/}
+          </div>
           <div>
             <button
               type="button"
-              className=" inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-blue-950 text-sm font-medium text-gray-100 hover:bg-gray-50 focus:outline-none"
+              className=" inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-hpDarkBlue text-sm font-medium text-gray-100 focus:outline-none"
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
             >
               Sort by <FaAngleDown className="ml-2" />
             </button>
           </div>
           {isDropdownOpen && (
-            <div className="origin-top-left absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+            <div className="origin-top-left absolute left-0 mt-2 w-56 rounded-md shadow-lg  ring-1 ring-black ring-opacity-5 focus:outline-none">
               <div
                 className="py-1"
                 role="menu"
@@ -86,7 +91,7 @@ const Table: React.FC<TableProps> = ({ columns, data, title }) => {
                     key={column.accessor}
                     href="#"
                     onClick={() => requestSort(column.accessor)}
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                    className="block px-4 py-2 text-sm text-hpDarkBlue "
                     role="menuitem"
                   >
                     {column.Header}
@@ -96,9 +101,13 @@ const Table: React.FC<TableProps> = ({ columns, data, title }) => {
             </div>
           )}
         </div>
+        <div>
+         <HpButton text={text} />
+        </div>
       </div>
-      <table className="min-w-full text-sm text-left text-gray-500">
-        <thead className="text-xs text-gray-700 uppercase bg-gray-50">
+      <div className="p-5 shadow-md rounded-lg overflow-hidden border border-gray-200">
+      <table className="min-w-full text-sm text-left text-hpDarkBlue">
+        <thead className="text-xs text-hpDarkBlue uppercase ">
           <tr>
             {columns.map((column) => (
               <th key={column.accessor} className="px-6 py-3 ">
@@ -111,7 +120,7 @@ const Table: React.FC<TableProps> = ({ columns, data, title }) => {
           {paginatedData.map((row, rowIndex) => (
             <tr
               key={rowIndex}
-              className="bg-white border-b hover:bg-purple-50 text-gray-800 font-medium"
+              className=" hover:bg-purple-50 text-gray-800 font-medium"
             >
               {columns.map((column) => (
                 <td key={column.accessor} className="px-6 py-4">
@@ -143,6 +152,7 @@ const Table: React.FC<TableProps> = ({ columns, data, title }) => {
           ))}
         </tbody>
       </table>
+      </div>
       <div className="flex justify-between items-center p-4">
         <div className="flex justify-center flex-grow">
           <button

@@ -1,32 +1,66 @@
 
 import Sidebar from "@/components/sidebar";
 import AccountList from "@/pages/accountList";
-import Login from "@/pages/login"
+import Login from "@/pages/login";
 
 
 const accounts = [
   {
-    accountName: 'Account 1',
-    custName: 'Customer 1',
-    accountNumber: 123456,
-    productType: 'Type A',
-    status: 'Open'
+    accountName: "Kathryn Murphy",
+    custName: "Kathryn21",
+    accountNumber: 20507899450,
+    productType: "Savings",
+    status: "Open",
   },
   {
-    accountName: 'Account 2',
-    custName: 'Customer 2',
-    accountNumber: 789012,
-    productType: 'Type B',
-    status: 'Closed'
+    accountName: "Kathryn Murphy",
+    custName: "Kathryn21",
+    accountNumber: 25740789945,
+    productType: "Notice",
+    status: "Open",
   },
-  // Add more account objects as needed
+  {
+    accountName: "Eleanor Pena",
+    custName: "Penagolem",
+    accountNumber: 781945967820,
+    productType: "Fixed",
+    status: "Open",
+  },
+  {
+    accountName: "Floyd Miles",
+    custName: "Floydbanjir",
+    accountNumber: 781945967520,
+    productType: "Cheque",
+    status: "Open",
+  },
+  {
+    accountName: "Kathryn Murphy",
+    custName: "Kathryn21",
+    accountNumber: 7845967545,
+    productType: "Savings",
+    status: "Closed",
+  },
+  {
+    accountName: "Courtney Henry",
+    custName: "Henrygaul",
+    accountNumber: 1145967222,
+    productType: "Notice",
+    status: "Open",
+  },
+  {
+    accountName: "Eleanor Pena",
+    custName: "Penagolem",
+    accountNumber: 45145967555,
+    productType: "Notice",
+    status: "Closed",
+  },
 ];
 
 export default function Home() {
   return (
-    <div className="bg-blue-800">
+    <div className="bg-gray-100 mx-auto">
      
-      <AccountList accounts={accounts} />
+      <AccountList accounts={accounts}   />
     </div>
   );
 }

@@ -1,6 +1,6 @@
  type Account = {
   accountName: string;
-  customerNumber: number;
+  custName: string;
   accountNumber: string;
   productType:
     | "savings"
@@ -13,7 +13,7 @@
 
 export const columns = [
   { Header: "Account Name", accessor: "accountName" },
-  { Header: "Customer Number", accessor: "customerNumber" },
+  { Header: "Customer Number", accessor: "custName" },
   { Header: "Account Number", accessor: "accountNumber" },
   { Header: "Product Type", accessor: "productType" },
   { Header: "Status", accessor: "status" },

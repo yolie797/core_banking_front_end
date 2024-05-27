@@ -15,6 +15,7 @@ const config: Config = {
       colors: {
         hpDarkBlue: "rgba(2, 40, 64, 1)",
         hpDarkGreen: "rgba(38, 59, 11, 1)",
+        hpLimeGreen: "#84e524",
         textWhite: "#ffffff",
         offWhite: "#F4F4F4",
         lightPurple: "#9980DA",
